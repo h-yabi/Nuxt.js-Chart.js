@@ -2,7 +2,7 @@ import moment from 'moment'
 
 export const state = () => ({
   data: []
-});
+})
 
 export const mutations = {
   getData(state, response) {
