@@ -1,7 +1,12 @@
 import moment from 'moment'
+import countArray from 'count-array-values'
 
 export const state = () => ({
-  data: []
+  data: [], // 30日分の取得データ
+  dailyCount: [], // 日毎の集計データ → [{ date: '2021-03-27', gender: '男性女性女性男性~ }]
+  totalCount: [], // 日毎の合計
+  maleCount: [], // 日毎の数（男性）
+  femaleCount: [], // 日毎の数（女性）
 })
 
 export const mutations = {
@@ -26,7 +31,69 @@ export const mutations = {
       }
     }
     state.data = array
-    // console.log(state.data)
+
+
+    // 日毎の【性別】を全てgenderに格納 → gender: "女性男性男性男性男性男性女性女性男性"
+    // ▼形式
+    // [{
+    //  date: '2021-03-27',
+    //  gender: '男性女性女性男性
+    // }]
+    state.dailyCount = array.reduce((result, current) => {
+      const element = result.find((p) => p.date === current.date);
+      if (element) {
+        element.gender += current.gender;
+      } else {
+        result.push({
+          date: current.date,
+          gender: current.gender
+        });
+      }
+      return result;
+    }, [])
+
+
+    // 配列に分割 → ["女性", "男性", "女性", "男性", "女性"]
+    const gender = state.dailyCount.map(value => {
+      return value.gender.match(/.{2}/g)
+    })
+
+
+    // 日毎の合計数を集計
+    state.totalCount = gender.map(value => {
+      return value.length
+    })
+
+
+    // 男女別に日毎集計
+    // 0: {value: "男性", count: 6}
+    // 1: {value: "女性", count: 3}
+    const genderTaxonomy = gender.map(value => {
+      return countArray(value)
+    });
+    // console.log(genderTaxonomy)
+
+
+    // 男女の感染者数をそれぞれの配列に格納
+    genderTaxonomy.map((value) => {
+      const countUp = (gender, array) => {
+        if(value[0] === undefined || value[1] === undefined && value[0].value !== gender) {
+          array.push(0)
+        } else {
+          if(value[0].value === gender) {
+            array.push(value[0].count)
+          } else if(value[1].value === gender) {
+            array.push(value[1].count)
+          }
+        }
+      }
+
+      if(value.length === 2 || value.length === 1) {
+        countUp('女性', state.femaleCount)
+        countUp('男性', state.maleCount)
+      }
+    })
+
   }
 }
 

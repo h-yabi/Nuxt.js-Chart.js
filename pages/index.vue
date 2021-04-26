@@ -2,7 +2,7 @@
   <div class="container">
     <div class="inner">
       <h1 class="title">【東京都】<br>新型コロナ陽性患者数の集計<span>（直近30日）</span></h1>
-      <Gender />
+      <TimeScale />
     </div>
   </div>
 </template>
@@ -19,7 +19,6 @@ export default {
 <style lang="sass">
 .container
   margin: 0 auto
-  min-height: 100vh
   display: flex
   justify-content: center
   align-items: center
@@ -28,6 +27,7 @@ export default {
 .inner
   width: 100%
   max-width: 1000px
+  padding: 30px 0 0
 
 .title
   display: block

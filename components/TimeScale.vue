@@ -5,12 +5,12 @@ import { mapActions } from 'vuex'
 export default {
   extends: Bar,
   mounted() {
-    this.genderAggregate(this.$store.state.data)
-    this.renderChart(this.$store.state.gender.data, this.$store.state.gender.options)
+    this.timeScale()
+    this.renderChart(this.$store.state.timescale.data, this.$store.state.timescale.options)
   },
   methods: {
     ...mapActions({
-      genderAggregate: 'gender/genderAggregate'
+      timeScale: 'timescale/timeScale'
     })
   }
 }
