@@ -10,8 +10,7 @@
 <script>
 export default {
   async fetch ({ store }) {
-    const url = 'https://stopcovid19.metro.tokyo.lg.jp';
-    const apiUrl = `/cors-proxy/${url}/data/130001_tokyo_covid19_patients.csv`
+    const apiUrl = '/api/data/130001_tokyo_covid19_patients.csv'
     await store.dispatch('getData', apiUrl)
   }
 }
