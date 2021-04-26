@@ -93,7 +93,7 @@ export const mutations = {
         countUp('男性', state.maleCount)
       }
     })
-
+    console.log(state.data)
   }
 }
 
