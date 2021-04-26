@@ -1,6 +1,6 @@
 
-const environment = process.env.NODE_ENV
-const envSet = require(`./env.${environment}.js`)
+// const environment = process.env.NODE_ENV
+// const envSet = require(`./env.${environment}.js`)
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -28,7 +28,7 @@ export default {
 
   proxy: {
     '/api/': {
-        target: envSet.apiBaseUrl,
+        target: 'https://stopcovid19.metro.tokyo.lg.jp',
         pathRewrite: {
             '^/api/': '/'
         }
