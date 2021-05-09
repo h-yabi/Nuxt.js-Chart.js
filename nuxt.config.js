@@ -9,7 +9,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'regarding-covid19-in-tokyo',
+    title: '【東京都】新型コロナ陽性患者数の集計（直近30日）',
     htmlAttrs: {
       lang: 'en'
     },

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="inner">
-      <h1 class="title">【東京都】<br>新型コロナ陽性患者数の集計<span>（直近30日）test</span></h1>
+      <h1 class="title">【東京都】<br>新型コロナ陽性患者数の集計<span>（直近30日）</span></h1>
       <TimeScale />
     </div>
   </div>
