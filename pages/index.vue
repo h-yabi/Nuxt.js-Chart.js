@@ -10,7 +10,7 @@
 <script>
 export default {
   async fetch ({ store }) {
-    const apiUrl = '/api/data/130001_tokyo_covid19_patients.csv'
+    const apiUrl = 'https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients.csv'
     await store.dispatch('getData', apiUrl)
   }
 }
