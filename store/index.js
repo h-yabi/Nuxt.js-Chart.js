@@ -31,6 +31,7 @@ export const mutations = {
       }
     }
     state.data = array
+    console.log(array)
 
 
     // 日毎の【性別】を全てgenderに格納 → gender: "女性男性男性男性男性男性女性女性男性"
