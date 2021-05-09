@@ -18,14 +18,6 @@
 
 
 /*!
- * Chart.js v2.9.4
- * https://www.chartjs.org
- * (c) 2020 Chart.js Contributors
- * Released under the MIT License
- */
-
-
-/*!
  * vue-client-only v2.0.0
  * (c) 2019-present egoist <0x142857@gmail.com>
  * Released under the MIT License.
@@ -40,3 +32,11 @@
 //! moment.js
 
 //! moment.js locale configuration
+
+
+/*!
+ * Chart.js v2.9.4
+ * https://www.chartjs.org
+ * (c) 2020 Chart.js Contributors
+ * Released under the MIT License
+ */
