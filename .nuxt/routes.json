@@ -3,6 +3,7 @@
     "name": "index",
     "path": "/",
     "component": "/Users/hiroyayabiku/works/Nuxt.js-Chart.js/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_14497d02"
   }
 ]
